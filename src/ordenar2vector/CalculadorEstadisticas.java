@@ -13,11 +13,13 @@ public class CalculadorEstadisticas {
     public static MediaDatosEstadisticos estadisticaOrdenaVectorAleatorio(
             OrdenarVector m, int tam_vector){
         int[] v=new int[10];
+        MediaDatosEstadisticos mediaDatosEstadisticos=new MediaDatosEstadisticos();
         for(int i=0;i<v.length;i++){
             DatosEstadisticos datosEstadisticos=new DatosEstadisticos();
             v=GeneraCaso.generaVector(tam_vector, true);
             m.ordena(v, datosEstadisticos);
             CompruebaCaso.compruebaVector(v, tam_vector);
+            mediaDatosEstadisticos.añadeDatosEstadisticos(datosEstadisticos);
         }
         return null;
     }
