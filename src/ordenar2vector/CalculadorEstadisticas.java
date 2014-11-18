@@ -3,7 +3,11 @@ package ordenar2vector;
 public class CalculadorEstadisticas {
     public static DatosEstadisticos estadisticaOrdenaVector(OrdenarVector m, 
             int tam_vector, boolean modo){
-        return null;
+        DatosEstadisticos datosEstadisticos=new DatosEstadisticos();
+        int[] vec=GeneraCaso.generaVector(tam_vector, modo);
+        CompruebaCaso.compruebaVector(vec, tam_vector);
+        m.ordena(vec, datosEstadisticos);
+        return datosEstadisticos;
     }
     
     public static DatosEstadisticos estadisticaOrdenaVectorAleatorio(
