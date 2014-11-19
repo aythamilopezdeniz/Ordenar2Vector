@@ -14,12 +14,12 @@ public class DatosEstadisticos {
         this.tiempo+=tiempoReal;
     }
 
-    public void añadeComparacion(int numeroComparaciones) {
-        this.numeroComparaciones+=numeroComparaciones;
+    public void añadeComparacion() {
+        this.numeroComparaciones++;
     }
 
-    public void añadeMovimiento(int numeroMovimientos) {
-        this.numeroMovimientos+=numeroMovimientos;
+    public void añadeMovimiento() {
+        this.numeroMovimientos++;
     }
 
     public void estableceTiempo(float tiempo) {

@@ -21,7 +21,7 @@ public class CalculadorEstadisticas {
             CompruebaCaso.compruebaVector(v, tam_vector);
             mediaDatosEstadisticos.añadeDatosEstadisticos(datosEstadisticos);
         }
-        return null;
+        return mediaDatosEstadisticos;
     }
     
     public static DatosEstadisticos[] estadisticasOrdenaVectoresInversos(

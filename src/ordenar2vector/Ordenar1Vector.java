@@ -1,7 +1,7 @@
 package ordenar2vector;
 
 public class Ordenar1Vector implements OrdenarVector {
-    private String nombreMetodo;
+    private final String nombreMetodo="Ordenar1Vector";
 
     @Override
     public String nombreMetodo() {
