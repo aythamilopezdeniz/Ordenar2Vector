@@ -30,7 +30,7 @@ public class Ordenar2Vector implements OrdenarVector {
         v=aux;
         //copiarVector(aux,v);
         double despues=System.currentTimeMillis();
-        de.estableceTiempo((float)((despues-antes)/1000f));
+        de.estableceTiempo((float)((despues-antes)/1000));
     }
 
     private void copiarVector(int[] aux, int[] v) {

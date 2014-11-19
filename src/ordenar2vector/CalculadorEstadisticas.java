@@ -31,6 +31,7 @@ public class CalculadorEstadisticas {
     
     public static MediaDatosEstadisticos[] estadisticasOrdenaVectoresAleatorios(
             OrdenarVector m, int[] tam_vectores){
+        MediaDatosEstadisticos[] mediaDatosEstadisticos=new MediaDatosEstadisticos[6];
         return null;
     }
 }

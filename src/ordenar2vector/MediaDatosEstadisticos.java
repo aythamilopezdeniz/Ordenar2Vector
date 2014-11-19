@@ -1,9 +1,9 @@
 package ordenar2vector;
 
 public class MediaDatosEstadisticos {
-    private float dameMediaTiempos;
-    private int dameMediaComparaciones;
-    private int dameMediaMovimientos;
+    private float dameMediaTiempos=0;
+    private float dameMediaComparaciones=0;
+    private float dameMediaMovimientos=0;
 
     public MediaDatosEstadisticos() {
     }
@@ -18,11 +18,11 @@ public class MediaDatosEstadisticos {
         return dameMediaTiempos;
     }
     
-    public int dameMediaComparaciones(){
+    public float dameMediaComparaciones(){
         return dameMediaComparaciones;
     }
     
-    public int dameMediaMovimientos(){
+    public float dameMediaMovimientos(){
         return dameMediaMovimientos;
     }
 }
