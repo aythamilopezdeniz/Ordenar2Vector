@@ -15,23 +15,27 @@ public class CalculadorEstadisticas {
         int[] v=new int[10];
         MediaDatosEstadisticos mediaDatosEstadisticos=new MediaDatosEstadisticos();
         for(int i=0;i<v.length;i++){
-            DatosEstadisticos datosEstadisticos=new DatosEstadisticos();
-            v=GeneraCaso.generaVector(tam_vector, true);
-            m.ordena(v, datosEstadisticos);
-            CompruebaCaso.compruebaVector(v, tam_vector);
-            mediaDatosEstadisticos.añadeDatosEstadisticos(datosEstadisticos);
+            mediaDatosEstadisticos.añadeDatosEstadisticos(
+                    estadisticaOrdenaVector(m, tam_vector, true));
         }
         return mediaDatosEstadisticos;
     }
     
     public static DatosEstadisticos[] estadisticasOrdenaVectoresInversos(
             OrdenarVector m, int[] tam_vectores){
-        return null;
+        DatosEstadisticos[] datosEstadisticos=new DatosEstadisticos[6];
+        for(int i=0;i<datosEstadisticos.length;i++){
+            datosEstadisticos[i]=estadisticaOrdenaVector(m, tam_vectores[i], false);
+        }
+        return datosEstadisticos;
     }
     
     public static MediaDatosEstadisticos[] estadisticasOrdenaVectoresAleatorios(
             OrdenarVector m, int[] tam_vectores){
         MediaDatosEstadisticos[] mediaDatosEstadisticos=new MediaDatosEstadisticos[6];
-        return null;
+        for(int i=0;i<mediaDatosEstadisticos.length; i++){
+            mediaDatosEstadisticos[i]=estadisticaOrdenaVectorAleatorio(m, tam_vectores[i]);
+        }
+        return mediaDatosEstadisticos;
     }
 }

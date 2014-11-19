@@ -1,7 +1,7 @@
 package ordenar2vector;
 
 public class Ordenar2Vector implements OrdenarVector {
-    private final String nombreMetodo="Inserción Lineal";
+    private final String nombreMetodo="Método de Shell";
 
     @Override
     public String nombreMetodo() {
@@ -10,31 +10,33 @@ public class Ordenar2Vector implements OrdenarVector {
 
     @Override
     public void ordena(int[] v, DatosEstadisticos de) {
-        int[] aux=new int[v.length];
         int j=0;
         double antes=System.currentTimeMillis();
-        // Inserción Lineal
         de.añadeMovimiento();
-        aux[0]=v[0];
-        for(int i=1;i<v.length;i++){
-            if(j<i&&aux[j]<=v[i])
-                de.añadeComparacion();
-                j+=1;
-            for(int k=i-1;i<j;k--){
+        int increment=v.length/2;
+	while(increment>0){
+            for(int i=increment;i<v.length; i++) {
+                j=i;
                 de.añadeMovimiento();
-                aux[k+1]=v[k];
-            }
-            de.añadeMovimiento();
-            aux[j]=v[i];
-        }
-        v=aux;
-        //copiarVector(aux,v);
+                int temp=v[i];
+                de.añadeComparacion();
+                    while(j>=increment&&v[j-increment]>temp) {
+                        de.dameComparaciones();
+                        de.añadeMovimiento();
+                        v[j]=v[j-increment];
+                        j=j-increment;
+                    }
+                    de.añadeMovimiento();
+                    v[j]=temp;
+		}
+            de.añadeComparacion();
+                if(increment==2){
+                    increment=1;
+		}else{
+                    increment*=(5.0/11);
+		}
+	}
         double despues=System.currentTimeMillis();
-        de.estableceTiempo((float)((despues-antes)/1000));
-    }
-
-    private void copiarVector(int[] aux, int[] v) {
-        for(int i=0;i<aux.length;i++)
-            v[i]=aux[i];
+        de.estableceTiempo((float)((despues-antes)/1000f));
     }
 }
