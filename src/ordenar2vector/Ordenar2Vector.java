@@ -30,12 +30,12 @@ public class Ordenar2Vector implements OrdenarVector {
                     v[j]=temp;
 		}
             de.añadeComparacion();
-                if(increment==2){
-                    increment=1;
-		}else{
-                    increment*=(5.0/11);
-		}
-	}
+            if(increment==2){
+                increment=1;
+            }else{
+                increment*=(5.0/11);
+            }
+        }
         double despues=System.currentTimeMillis();
         de.estableceTiempo((float)((despues-antes)/1000f));
     }
